@@ -1,0 +1,9 @@
+$color: blue;
+
+.container {
+  width: 600px;
+  heigth: 600px;
+  background-color: $color;
+  text-align: center;
+
+}
