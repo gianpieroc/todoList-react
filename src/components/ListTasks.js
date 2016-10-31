@@ -25,7 +25,7 @@ class ListTasks extends React.Component{
   constructor(){
     super();
     this.state ={
-      tasks: ["Clear Underpants", "Date with monica"],
+      tasks: ["Go to School", "Date with monica", "Go to the doc"],
       completed: 0,
       currentTask: ''
     }
