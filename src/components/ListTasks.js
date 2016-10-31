@@ -1,3 +1,4 @@
+import React from 'react'
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
@@ -6,10 +7,10 @@ import LinearProgress from 'material-ui/LinearProgress';
 
 const style = {
   inputText:{
-   marginLeft:50,
-   marginRight:50,
-   width: 400,
-   marginTop:30,
+    marginLeft:50,
+    marginRight:50,
+    width: 400,
+    marginTop:30,
   },
   gridList:{
     width: 400,
@@ -20,14 +21,14 @@ const style = {
   },
 };
 
-class ListTask extends React.Component{
+class ListTasks extends React.Component{
   constructor(){
     super();
     this.state ={
-          tasks: ["Clear Underpants", "Date with monica"],
-          completed: 0,
-          currentTask: ''
-          }
+      tasks: ["Clear Underpants", "Date with monica"],
+      completed: 0,
+      currentTask: ''
+    }
   }
 
   onChange(event){
@@ -48,25 +49,24 @@ class ListTask extends React.Component{
   render(){
     const currentTask = <ListItem primaryText={this.state.currentTask}/> 
 
-    const totalTasks = this.state.tasks.map((task) => 
-      <ListItem leftCheckbox={<Checkbox/>} primaryText={task}/>
-    );
+      const totalTasks = this.state.tasks.map((task) => 
+          <ListItem leftCheckbox={<Checkbox/>} primaryText={task}/>
+      );
 
     return(
-    <div >
-      <TextField style={style.inputText}
-        hintText="Task"
-        ref= "TaskField"
-        onKeyDown= {this.verify.bind(this)}
-        onChange={this.onChange.bind(this)}
-          /><br />
-          <List style={style.gridList}>
-            <ListItem primaryText={this.state.currentTask}/>
-          {totalTasks}
-      </List>
+      <div >
+        <TextField style={style.inputText}
+          hintText="Task"
+          ref= "TaskField"
+          onKeyDown= {this.verify.bind(this)}
+          onChange={this.onChange.bind(this)}
+        /><br />
+      <List style={style.gridList}>
+        <ListItem primaryText={this.state.currentTask}/>
+      {totalTasks}
+    </List>
       </div> 
-    );
-  }
+    ); }
 
 }
-export default ListTask;
+export default ListTasks;
